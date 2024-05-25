@@ -1,7 +1,7 @@
 var express = require('express');
 var consign = require('consign');
 var bodyParser = require('body-parser');
-const expressValidator = require('express-validator')
+var expressValidator = require('express-validator');
 
 var app = express();
 
@@ -14,6 +14,7 @@ app.use(expressValidator());
 
 consign()
     .include('app/routes')
+    .then('config/dbConnection.js')
     .then('app/models')
     .then('app/controllers')
     .into(app);
