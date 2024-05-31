@@ -1,49 +1,59 @@
 <!DOCTYPE HTML>
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8">
-
-		<title>MMORPG - Game of Thrones</title>
-		
-		<!-- JQuery -->
-		<script src="js/jquery-2.2.1.js"></script>
-
-		<!-- bootstrap - link cdn -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<head>
+    <meta charset="UTF-8">
+    <title>MMORPG - Game of Thrones</title>
 	
-		<!-- incluindo css -->
-		<link href="css/style.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+</head>
 
-	</head>
+<body class="body-index">
 
-	<body class="body-index">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">MMORPG - Game Of Thrones</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <form class="form-inline" action="/autenticar" method="post">
+                            <div class="form-group mb-2">
+                                <input type="text" name="usuario" id="usuario" placeholder="Usuário" class="form-control mr-2" autocomplete="off" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="password" name="senha" id="senha" placeholder="Senha" class="form-control mr-2" />
+                            </div>
+                            <button type="submit" class="btn btn-success mb-2 mr-2">Entrar</button>
+                            <button type="button" class="btn btn-info mb-2">Cadastro</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-		<nav class="navbar navbar-default navbar-static-top">
-			<div class="container">
-				<form class="form-inline form-entrar">
-					<div class="form-group">				
-						<input type="text" name="usuario" id="usuario" placeholder="Usuário" class="form-control" autocomplete="off" />
-						<input type="password" name="senha" id="senha" placeholder="Senha" class="form-control" />
-						<button type="button" class="btn btn-success">Entrar</button>
-						<button type="button" class="btn btn-info">Cadastro</button>
-					</div>
-				</form>
-			</div>
-			
-		</nav>
+    <div class="container">
+        <% if(validacao.length > 0){ %>
+            <div class="alert alert-danger mt-3">
+                <strong>Atenção!</strong>
+                <ul>
+                    <% for(var i = 0; i < validacao.length; i++){ %>
+                        <li><%= validacao[i].msg %></li>
+                    <% } %>
+                </ul>
+            </div>
+        <% } %>
+        
+        <div class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+            <img src="images/game_of_thrones_logo.jpg" class="img-fluid" alt="Game of Thrones Logo">
+        </div>
+    </div>
 
-	    <div class="container">
-	    	<div class="row">
-	    		<div class="col-md-2"></div>
-
-	    		<div class="col-md-8">
-					<img src="images/game_of_thrones_logo.jpg" />
-				</div>
-
-	    		<div class="col-md-2"></div>
-		    	</div>
-	    	</div>
-	    </div>	
-		
-	</body>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </html>

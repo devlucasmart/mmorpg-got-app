@@ -82,3 +82,83 @@
 	color:#fff;
 	font-size: 15px;
 }
+
+.navbar-static-top {
+	background-color: #f8f8f8;
+	border-bottom: 1px solid #e7e7e7;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.navbar-brand {
+	font-weight: bold;
+	color: #5bc0de !important;
+}
+.form-entrar {
+	margin-top: 8px;
+}
+.form-control {
+	margin-right: 10px;
+}
+.btn-success {
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+.btn-info {
+	background-color: #5bc0de;
+	border-color: #46b8da;
+}
+.alert-danger {
+	margin-top: 10px;
+}
+
+.body-jogo {
+	background-color: #f8f9fa;
+}
+.navbar {
+	margin-bottom: 20px;
+}
+.navbar .btn {
+	margin-top: 8px;
+}
+.casa img {
+	width: 100%;
+	border-radius: 8px;
+}
+.barra-superior img {
+	width: 50px;
+	height: 50px;
+}
+.barra-superior span {
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 5px;
+}
+.barra-superior .col-sm-2 {
+	text-align: center;
+	margin-bottom: 10px;
+}
+.acoes {
+	background: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.barra-inferior {
+	background: #343a40;
+	padding: 10px 0;
+	color: #fff;
+}
+.barra-inferior img {
+	width: 40px;
+	height: 40px;
+}
+.barra-inferior span {
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 5px;
+}
+.barra-inferior .col-sm-2, .barra-inferior .col-sm-1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

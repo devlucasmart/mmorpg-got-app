@@ -2,10 +2,7 @@ const { MongoClient } = require('mongodb');
 
 const connMongoDB = async function() {
     console.log('Entrou na função de conexão');
-    const client = new MongoClient('mongodb://localhost:27017', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    });
+    const client = new MongoClient('mongodb://localhost:27017');
 
     try {
         await client.connect();
