@@ -14,6 +14,10 @@ module.exports.jogo = function(application, req, res){
 
 module.exports.sair = function(application, req, res){
     req.session.destroy(function(err){
+        const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+        const currentDateTime = moment().format('YYYY-MM-DD HH:mm:ss');
+        console.log(`Sessão Finalizada - Data/Hora: ${currentDateTime}, IP: ${ip}`);
+
         res.render('index', {validacao:{}});
     });
 }

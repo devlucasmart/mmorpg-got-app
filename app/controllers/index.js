@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 module.exports.index = function(application, req, res){
     res.render('index', { validacao: {} });
 }
@@ -20,6 +22,10 @@ module.exports.autenticar = function(application, req, res){
 
     UsuariosDAO.autenticar(dadosForm, req)
         .then(() => {
+            const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+            const currentDateTime = moment().format('YYYY-MM-DD HH:mm:ss');
+            console.log(`Sessão Iniciada - Data/Hora: ${currentDateTime}, IP: ${ip}`);
+
             res.redirect('/jogo');
         })
         .catch((err) => {
