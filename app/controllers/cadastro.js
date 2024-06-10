@@ -20,13 +20,16 @@ module.exports.cadastrar = function(application, req, res) {
 
     const connMongoDB = application.config.dbConnection();
     const UsuariosDAO = new application.app.models.UsuariosDAO(connMongoDB);
+    const JogoDAO = new application.app.models.JogoDAO(connMongoDB);
 
     UsuariosDAO.inserirUsuario(dadosForm)
         .then(() => {
+            //geração dos parametros
             res.send('Cadastro realizado com sucesso');
         })
         .catch((err) => {
             console.error("Erro ao cadastrar usuário:", err);
             res.status(500).send('Erro ao cadastrar usuário');
         });
+    JogoDAO.gerarParametros(dadosForm.usuario);
 };

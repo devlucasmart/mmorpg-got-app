@@ -2,9 +2,37 @@
 	<h3>Pergaminhos</h3>
 	
 	<ul>
-		<li>1 enforcamento(s) programado - <small>restam 00000 segundos - <a href="#">revogar ordem</a></small></li>
-		<li>2 aldeão(ões) em treinamento de magia - <small>restam 00000 segundos - <a href="#">revogar ordem</a></small></li>
-		<li>1 aldeão(ões) em treinamento de história - <small>restam 00000 segundos - <a href="#">revogar ordem</a></small></li>
-		<li>5 aldeão(ões) coletando recursos - <small>restam 00000 segundos - <a href="#">revogar ordem</a></small></li>
+		<% for(var i = 0; i < acoes.length; i++) { %>
+			<%
+				var acao = acoes[i].acao;
+				var acaoTexto;
+				
+				switch (acao) {
+					case '1':
+						acaoTexto = 'aldeão(ões) coletando recursos';
+						break;
+					case '2':
+						acaoTexto = 'enforcamento(s) programado';
+						break;
+					case '3':
+						acaoTexto = 'aldeão(ões) em treinamento de História';
+						break;
+					case '4':
+						acaoTexto = 'aldeão(ões) em treinamento de Magia';
+						break;
+					default:
+						acaoTexto = 'ação desconhecida (' + acao + ')';
+				}
+
+				// Calcular horas restantes
+				var agora = new Date();
+				var terminaEm = new Date(acoes[i].acao_termina_em);
+				var diferencaEmMilissegundos = terminaEm - agora;
+				var segundosRestantes = Math.floor(diferencaEmMilissegundos / (1000));
+			%>
+			<li><%= acoes[i].quantidade %> <%= acaoTexto %> 
+					- <small> restam <span class="tempo_restante"><%= segundosRestantes %></span> Segundos 
+					- <a href="/revogar_acao?id_acao=<%=acoes[i]._id%>">revogar ordem</a></small>
+		<% } %>
 	</ul>
 </div>

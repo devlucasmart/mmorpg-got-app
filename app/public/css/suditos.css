@@ -1,0 +1,21 @@
+body {
+    background-color: #1e1e1e; /* Cor de fundo escura */
+    color: #fff; /* Cor do texto */
+    font-family: Arial, sans-serif; /* Fonte do texto */
+  }
+  .form-group {
+    margin-bottom: 0; /* Remove margem inferior padrão */
+  }
+  .form-control {
+    background-color: #495057;
+    color: #fff;
+    border-color: #495057;
+  }
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }

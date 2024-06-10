@@ -1,0 +1,35 @@
+body {
+    background-color: #1e1e1e; /* Cor de fundo escura */
+    color: #fff; /* Cor do texto */
+    font-family: Arial, sans-serif; /* Fonte do texto */
+  }
+  #pergaminhos {
+    margin-top: 50px; /* Espaçamento superior */
+  }
+  #pergaminhos h3 {
+    color: #ffc107; /* Cor do título */
+    border-bottom: 2px solid #ffc107; /* Linha de destaque sob o título */
+    padding-bottom: 5px; /* Espaçamento abaixo do título */
+  }
+  #pergaminhos ul {
+    list-style: none; /* Remover marcadores de lista */
+    padding-left: 0; /* Remover recuo padrão da lista */
+  }
+  #pergaminhos ul li {
+    margin-bottom: 10px; /* Espaçamento inferior entre os itens */
+    border-left: 4px solid #ffc107; /* Linha vertical colorida à esquerda de cada item */
+    padding-left: 10px; /* Espaçamento interno à esquerda */
+  }
+  #pergaminhos ul li small {
+    color: #a8a8a8; /* Cor do texto pequeno */
+    font-size: 0.8em; /* Tamanho do texto pequeno */
+  }
+  #pergaminhos ul li small a {
+    color: #ffc107; /* Cor do link */
+    text-decoration: none; /* Remover sublinhado do link */
+    transition: color 0.3s; /* Transição suave da cor do link */
+  }
+  #pergaminhos ul li small a:hover {
+    color: #ffc107; /* Cor do link ao passar o mouse */
+    text-decoration: none; /* Remover sublinhado do link ao passar o mouse */
+  }
