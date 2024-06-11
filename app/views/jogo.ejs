@@ -58,13 +58,24 @@
     </script>
 </head>
 <body class="body-jogo">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-static-top navbar-custom">
         <div class="container">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#">Game of Thrones MMORPG</a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand">Game of Thrones MMORPG</a>
             </div>
-            <div class="nav navbar-nav navbar-right">
-                <button type="button" class="btn btn-info navbar-btn" id="btn_sair">Sair</button>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <button type="button" class="btn btn-info navbar-btn" id="btn_sair">Sair</button>
+                    </li>                    
+                </ul>
+                
             </div>
         </div>
     </nav>

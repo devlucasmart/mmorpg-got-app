@@ -4,6 +4,10 @@ module.exports.index = function(application, req, res){
     res.render('index', { validacao: {} });
 }
 
+module.exports.cadastro = function(application, req, res){
+    res.render('cadastro', { validacao: {} });
+}
+
 module.exports.autenticar = function(application, req, res){
     var dadosForm = req.body;
 

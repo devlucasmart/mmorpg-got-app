@@ -25,7 +25,7 @@ module.exports.cadastrar = function(application, req, res) {
     UsuariosDAO.inserirUsuario(dadosForm)
         .then(() => {
             //geração dos parametros
-            res.send('Cadastro realizado com sucesso');
+            res.redirect("/");
         })
         .catch((err) => {
             console.error("Erro ao cadastrar usuário:", err);

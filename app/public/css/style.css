@@ -162,3 +162,40 @@
 	align-items: center;
 	justify-content: center;
 }
+
+.navbar-custom {
+	background-color: #343a40;
+	border-color: #343a40;
+	color: #fff;
+}
+.navbar-custom .navbar-brand, 
+.navbar-custom .navbar-text {
+	color: #fff;
+}
+.navbar-custom .navbar-nav > li > a {
+	color: #fff;
+}
+.navbar-custom .navbar-nav > li > a:hover,
+.navbar-custom .navbar-nav > li > a:focus {
+	color: #d1d1d1;
+	background-color: transparent;
+}
+.navbar-custom .navbar-toggle {
+	border-color: #fff;
+}
+.navbar-custom .navbar-toggle .icon-bar {
+	background-color: #fff;
+}
+.btn-custom {
+	background-color: #28a745;
+	color: #fff;
+	border: none;
+	transition: background-color 0.3s ease;
+}
+.btn-custom:hover {
+	background-color: #218838;
+	color: #fff;
+}
+.btn-custom:focus {
+	box-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+}
