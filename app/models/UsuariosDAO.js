@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 function UsuariosDAO(connection) {
     this._connection = connection;
 }
@@ -5,6 +6,11 @@ function UsuariosDAO(connection) {
 UsuariosDAO.prototype.inserirUsuario = function(usuario) {
     return this._connection.then(db => {
         const collection = db.collection('usuarios');
+
+        const hashedPassword = crypto.createHash('md5').update(usuario.senha).digest('hex');
+        // Substituir a senha original pela senha criptografada
+        usuario.senha = hashedPassword;
+
         return collection.insertOne(usuario)
             .then(result => {
                 console.log("Usuário salvo com sucesso:", result);
@@ -23,6 +29,11 @@ UsuariosDAO.prototype.inserirUsuario = function(usuario) {
 UsuariosDAO.prototype.autenticar = function(usuario, req) {
   return this._connection.then(db => {
     const collection = db.collection('usuarios');
+
+    const hashedPassword = crypto.createHash('md5').update(usuario.senha).digest('hex');
+        // Substituir a senha original pela senha criptografada
+    usuario.senha = hashedPassword;
+        
     return collection.find(usuario).toArray()
       .then(result => {
         
